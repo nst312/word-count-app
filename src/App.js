@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   const fetchSearchHistory = () => {
-    axios.get('http://localhost:3001/api/insights')
+    axios.get('https://word-count-api.onrender.com/api/insights')
       .then(response => {
         setSearchHistory(response.data);
       })
@@ -30,7 +30,7 @@ function App() {
   const handleWordCount = () => {
     setIsLoading(true); // Start loading
 
-    const endpoint = 'http://localhost:3001/api/analyze';
+    const endpoint = 'https://word-count-api.onrender.com/api/analyze';
     const data = {
       url: url,
     };
@@ -49,7 +49,7 @@ function App() {
   };
 
   const handleRemoveEntry = (id) => {
-    const endpoint = `http://localhost:3001/api/insights/${id}`;
+    const endpoint = `https://word-count-api.onrender.com/api/insights/${id}`;
 
     axios.delete(endpoint)
       .then(() => {
@@ -62,7 +62,7 @@ function App() {
 
 
   const handleFavEntry = (id) => {
-    const endpoint = `http://localhost:3001/api/insights/${id}`;
+    const endpoint = `https://word-count-api.onrender.com/api/insights/${id}`;
 
     axios.put(endpoint)
       .then(() => {
